@@ -144,17 +144,17 @@ a{
 }
 @font-face {
     font-family: euro;
-    src: url("/fonts/eurofurence/eurofurence.ttf");
+    src: url("fonts/eurofurence/eurofurence.ttf");
 }
 
 @font-face {
     font-family: lato;
-    src: url("/fonts/lato/Lato-Regular.ttf");
+    src: url("fonts/lato/Lato-Regular.ttf");
 }
 
 @font-face {
     font-family: latoBold;
-    src: url("/fonts/lato/Lato-Bold.ttf");
+    src: url("fonts/lato/Lato-Bold.ttf");
 }
 .svg-sale{
     width: 30px;
