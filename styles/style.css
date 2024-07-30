@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+/* SETUP */
+@import url("setup/variables.css");
+@import url("setup/typography.css");
+
+/* BASICS */
+@import url("basics/base.css");
+@import url("basics/helpers.css");
+@import url("basics/layout.css");
+
+/* COMPONENTS */
+@import url(components/main-header.css);
+@import url(components/main.css);
+@import url(components/card.css);
+@import url(components/pages.css);
+@import url(components/main-footer.css);
+
+@import url(basics/mq.css);
+
+
+.rating-box .stars{
+    display: flex;
+    align-items: center;
+    gap:15px;
+}
+.stars i{
+    color: #e6e6e6;
+    font-size: 25px;
+    cursor: pointer;
+}
+.stars i.active{
+    color: #ff9c1a;
+}
+
+button {
+    background: none;
+    font-size: 1em;
+    border: none;
+    color: var(--clrPrimary5);
+    align-self: end;
+    justify-self: start;
+    font-family: lato, serif;
+    /* letter-spacing: 0.03em; */
+
+
+
+    padding: 0;
+    cursor: pointer;
+}
+.book-list button:not(:first-child){
+    margin-left: 20px;
+}
+a{
+    font-size: 1em;
+    color: var(--clrPrimary5);
+    align-self: end;
+    justify-self: start;
+    font-family: lato, serif;
+    /* letter-spacing: 0.03em; */
+    text-decoration: none;
+
+
+
+    padding: 0;
+    cursor: pointer;
+}
+
+
+
+.book-list {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 200px));
+    grid-auto-flow: row;
+    margin-top: 3rem;
+    row-gap: 20px;
+    display: grid;
+    list-style: none;
+    gap: 30px;
+}
+
+.book-list img {
+    border-radius: 10px;
+    width: 100%;
+    aspect-ratio: 0.7;
+}
+.red{
+    color:red;
+}
+.green{
+    color:green;
+}
+
+.book-list p:not(.book-details) {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.user-msg {
+    background-color: lightgray;
+    padding: 0.5em 1em;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    color: white;
+    font-weight: bold;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user-msg.success {
+    background-color: rgb(100, 86, 86);
+}
+
+.user-msg.error {
+    background-color: rgb(100, 86, 86);
+}
+
+.user-msg button {
+    float: right;
+    margin: 1em;
+    width: fit-content;
+}
+.add-review{
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1em; 
+}
+.add-review label {
+    margin-bottom: 0.5em; /* Adjust the margin between the label and input as needed */
+}
+.add-review input,
+.add-review select,
+.add-review textarea,
+.add-review button {
+    width: 100%;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: euro;
+    src: url("/fonts/eurofurence/eurofurence.ttf");
+}
+
+@font-face {
+    font-family: lato;
+    src: url("/fonts/lato/Lato-Regular.ttf");
+}
+
+@font-face {
+    font-family: latoBold;
+    src: url("/fonts/lato/Lato-Bold.ttf");
+}
+.svg-sale{
+    width: 30px;
+    height: 30px;
+}
+.review-list{
+    display: flex;
+    flex-direction: row;
+}
+.review-preview{
+    border-bottom: #737373 1px solid;
+
+}

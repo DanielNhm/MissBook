@@ -1,0 +1,17 @@
+/* palette */
+
+:root{
+    --clrDot:#316f20;
+    --clrPrimary5:#aeaeae;
+    --clrPrimary4:#FFFFFF;
+    --clrPrimary3:#E5E5E5;
+    --clrPrimary2:#F8F8F8;
+    --clrPrimary1: #737373;
+    --clrPrimarybase: #4F4E4E;
+    --clrPrimary-1:#292929;
+    --clrPrimary-2: #1E1E1E;
+
+    --l:1040px;
+    --m:760px;
+    --s:600px;
+}
