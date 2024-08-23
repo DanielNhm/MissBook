@@ -2,6 +2,7 @@ const Router = ReactRouterDOM.HashRouter
 const { Routes, Route } = ReactRouterDOM
 
 import { AppHeader} from "./cmps/app-header.jsx"
+import { AppFooter} from "./cmps/app-footer.jsx"
 import { AddReview} from "./cmps/add-review.jsx"
 import { Home } from './views/home.jsx'
 import { About } from './views/about.jsx'
@@ -14,7 +15,7 @@ import { UserMsg } from "./cmps/user-msg.jsx"
 export function App(){ 
     return (
         <Router>
-        <section className="app main-layout">
+        <section className="app main-content main-layout">
         <AppHeader></AppHeader>
             <main className="main-content">
                 <Routes>
@@ -28,6 +29,7 @@ export function App(){
                 </Routes>
             </main>
             <UserMsg/>
+        <AppFooter></AppFooter>
         </section>
         </Router>
     )

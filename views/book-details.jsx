@@ -1,5 +1,5 @@
 const { useEffect, useState } = React
-const {Link, useParams,useNavigate } = ReactRouterDOM
+const { Link, useParams, useNavigate } = ReactRouterDOM
 
 
 
@@ -19,21 +19,13 @@ export function BookDetails() {
 
     useEffect(() => {
         bookService.get(params.bookId).then(setBook)
-        .catch(err=>{
-            console.log('Had issued in book details',err)
-            navigate('/book')
-        })
+            .catch(err => {
+                console.log('Had issued in book details', err)
+                navigate('/book')
+            })
     }, [])
 
-    function getPublishedDate() {
-        const date = new Date()
-        const diff = date.getFullYear() - book.publishedDate
-        if (diff > 10) {
-            return 'Vintage'
-        } else if (diff <= 2) {
-            return 'New'
-        }
-    }
+
     function getColorTxt() {
         const colorTxt = (book.listPrice.amount > 150) ? 'red' : ''
             || (book.listPrice.amount < 20) ? 'green' : ''
@@ -47,43 +39,56 @@ export function BookDetails() {
         return priceSymbol
     }
     function onRemoveReview(reviewId) {
-        bookService.removeReview(book.id,reviewId).then(() => {
+        bookService.removeReview(book.id, reviewId).then(() => {
             const updateReview = book.reviews.filter(review => review.id != reviewId)
-            setBook(prevBook=>({ ...prevBook ,reviews:updateReview}))
+            setBook(prevBook => ({ ...prevBook, reviews: updateReview }))
             showSuccessMsg(`review ${reviewId} removed`)
 
-        }).catch(()=>{
+        }).catch(() => {
             showErrorMsg('Operation failed')
         })
     }
     console.log(book)
 
-    function onBack(){
+    function onBack() {
         navigate('/book')
     }
 
 
     if (!book) return <div>Loading...</div>
 
-    return <section className="book-details">
-        <h1>Name : {book.title}</h1>
-        <h1>Authors : {book.authors}</h1>
-        <h1>Description :</h1>
-        <LongTxt txt={book.description}></LongTxt>
-        <h2>{book.pageCount}</h2>
-        {(book.pageCount < 100) && <h2> Light Reading</h2> ||
-            (book.pageCount > 500) && <h2> Serious Reading</h2> ||
-            (book.pageCount > 100) && <h2> Descent Reading</h2>}
-        <h3>{getPublishedDate()}</h3>
-        <img src={book.thumbnail} />
-        <h1 className={getColorTxt()}>{`${getPriceSymbol()} ${book.listPrice.amount}`}</h1>
-        {(book.listPrice.isOnSale) && <img className='svg-sale' src="../svg/sale-svgrepo-com.svg"></img>}
-        <Link to={`/book/${book.id}/review`}>Add review</Link>
-        {book.reviews && <ReviewList book={book} onRemoveReview={onRemoveReview}/>}
+    return <section>
+        <section className="book-details">
+            <section className='details'>
 
-        <div>
-            <button onClick={onBack} >back</button>
-        </div>
+                <article>
+                    <span className='bold'>Name : </span> {book.title}
+
+                </article>
+                <article>
+
+                    <span className='bold'>Authors :</span> {book.authors}
+                </article>
+                <span className='bold'>Description :</span>
+                <LongTxt txt={book.description}></LongTxt>
+                <article className={getColorTxt()}> <span className='bold'> price:</span> {`${getPriceSymbol()} ${book.listPrice.amount}`}</article>
+
+            </section>
+            <div className='img-details'>
+
+            <img src={book.thumbnail} />
+            {(book.listPrice.isOnSale) && <img className='svg-sale' src="../svg/sale-svgrepo-com.svg"></img>}
+            </div>
+        </section>
+            {book.reviews && <ReviewList book={book} onRemoveReview={onRemoveReview} />}
+        <section className='flex align-center column-direction'>
+
+
+            <Link to={`/book/${book.id}/review`}>Add review</Link>
+            <div>
+                <button onClick={onBack} >back</button>
+            </div>
+        </section>
 
 
     </section>

@@ -1,6 +1,6 @@
 export function Home(){
     return <section className="home">
-<h1>welcome to missBook!</h1>
+<h1>Welcome to Miss Book!</h1>
 
     </section>
 }

@@ -1,0 +1,51 @@
+/* GRID HELPERS */
+.grid{
+    display: grid;
+}
+
+.grid.space-between{
+    justify-content: space-between;
+
+}
+
+.grid.align-center{
+    align-items: center;
+}
+
+.grid.column-flow{
+    grid-auto-flow: column;
+}
+/* FLEX HELPERS */
+
+.flex{
+    display: flex;
+}
+
+.flex.space-between{
+    justify-content: space-between;
+}
+
+.flex.align-center{
+    align-items: center;
+}
+.flex.justify-center{
+    justify-content: center;
+}
+.flex.column-direction{
+    flex-direction: column;
+}
+
+/* LIST HELPERS */
+
+.clean-list{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* FONT HELPERS */
+
+
+.bold {
+    font-weight: bold;
+}

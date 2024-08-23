@@ -46,7 +46,7 @@ export function AddReview() {
 
                   </StarRating>
                   <label htmlFor="readAt"> Read at:</label>
-                  <input onChange= {handleChange} value = {readAt} type="date" id="date" name="date"/>
+                  <input onChange={handleChange} value={readAt} type="date" id="readAt" name="readAt" />
                   <label htmlFor="description">Share details of your own experience:</label>
                   <textarea onChange= {handleChange} value = {description} type="text" id="description" name="description"/>
                   <button>Add review</button>

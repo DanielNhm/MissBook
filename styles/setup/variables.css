@@ -10,8 +10,15 @@
     --clrPrimarybase: #4F4E4E;
     --clrPrimary-1:#292929;
     --clrPrimary-2: #1E1E1E;
+    --clrPrimaryActive: #ffffff;
 
     --l:1040px;
     --m:760px;
     --s:600px;
+}
+
+body.dark-mode{
+    --clrPrimary1: #f1ecec;
+    --clrPrimary2:#292929;
+
 }

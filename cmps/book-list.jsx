@@ -9,9 +9,9 @@ export function BookList({ books, onRemoveBook }) {
         {books.map((book) => <li key={book.id}>
             <BookPreview book={book} />
             <section>
-                <button onClick={() => {
+                <a onClick={() => {
                     onRemoveBook(book.id)
-                }}>remove</button>
+                }}>remove</a>
 
                 <button>
                     <Link to={`/book/${book.id}`}>select</Link>

@@ -1,7 +1,5 @@
 export function BookPreview({ book }) {
-    console.log('bookpreview',book)
-    const colorTxt = (book.listPrice.amount > 150) ? 'red' : ''
-        || (book.listPrice.amount < 20) ? 'green' : ''
+    const colorTxt = (book.listPrice.amount < 20) ? 'green' : ((book.listPrice.amount > 150) ? 'red' : '')
     const priceSymbol = book.listPrice.currencyCode === 'EUR'? '€':''
     ||book.listPrice.currencyCode === 'USD'?'$':''
     ||(book.listPrice.currencyCode === 'ILS')?'₪':''

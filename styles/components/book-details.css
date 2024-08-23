@@ -1,0 +1,87 @@
+.book-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    max-width: 700px;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    gap: 30px;
+}
+
+.details {
+    flex: 1; 
+}
+
+.img-details {
+    flex: 1; 
+    position: relative;
+    max-width: 100%; 
+    height: auto;
+    border-radius: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.img-details img:first-child {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.svg-sale {
+    position: absolute;
+    top: 0;
+    right: -35px;
+    max-width: 100px; 
+    height: auto;
+}
+
+
+.book-details h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.book-details h2 {
+    font-size: 20px;
+    color: #555;
+    margin-top: 20px;
+}
+
+.book-details article {
+    margin-bottom: 20px;
+}
+
+.book-details .green {
+    color: green;
+}
+
+.book-details .red {
+    color: red;
+}
+
+
+
+.book-details button {
+    margin-bottom: 30px;
+}
+
+
+
+.book-details a {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.book-details a:hover {
+    color: #0056b3;
+}

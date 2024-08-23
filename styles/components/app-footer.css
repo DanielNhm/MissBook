@@ -1,0 +1,14 @@
+.main-footer .logo {
+    font-family: inconsolata;
+    letter-spacing: 0.1em;
+    color: var(--clrPrimary2);
+
+
+}
+
+footer{
+    background-color: var(--clrPrimary-1);
+    margin-top: auto;
+    padding: 10px;
+
+}

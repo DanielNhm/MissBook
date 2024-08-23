@@ -6,10 +6,61 @@ html {
     color: var(--clrPrimary1);
     font-family: lato, serif;
     line-height: 1.25;
+    height: 100%;
 
 }
 
 body {
     margin: 0;
     font-size: 1rem;
+    background-color: white;
+
 }
+
+.main-content{
+    min-height: 88vh;
+}
+
+
+
+
+/* .main-content footer {
+    position: fixed;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    
+} */
+
+img {
+    width: 100%;
+}
+
+a {
+    color: var(--clrPrimary5);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+a:hover,button:hover:not(.btn-toggle-menu){
+    color:var(--clrPrimary-2) ;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    /* font-weight: 400; */
+    margin: 0 0 1em ;
+    line-height: 1.4;
+}
+
+.main-footer img{
+    width: 18px;
+    height: 16px;
+}
+
+

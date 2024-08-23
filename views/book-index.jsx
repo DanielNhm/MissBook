@@ -41,10 +41,11 @@ export function BookIndex() {
     }
   
     return <section className="book-index">
+        <section className='flex align-center space-between'>
 
-        <h1>books...</h1>
-        <Link to="/book/edit">Add book</Link>
         <BookFilter filterBy={filterBy} onSetFilterBy={onSetFilterBy}/>
+        <Link to="/book/edit">Add book</Link>
+        </section>
         <BookList books={books} onRemoveBook={onRemoveBook} />
         
           
