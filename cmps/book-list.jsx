@@ -5,7 +5,7 @@ const { Link } = ReactRouterDOM
 
 
 export function BookList({ books, onRemoveBook }) {
-    return <ul className="book-list">
+    return <ul className="book-list flex justify-center">
         {books.map((book) => <li key={book.id}>
             <BookPreview book={book} />
             <section>
