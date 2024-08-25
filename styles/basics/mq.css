@@ -61,7 +61,11 @@
     }
 
     .search {
+        width: 60%;
         height:50px;
+    }
+    .search-input{
+        width: 100%;
     }
 
    
