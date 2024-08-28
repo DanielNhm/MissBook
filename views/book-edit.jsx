@@ -58,7 +58,7 @@ export function BookEdit() {
 
     return <section className="book-edit">
         <h2>{params.bookId ? 'Edit' : 'Add'} Book</h2>
-        <form onSubmit={onSaveBook}>
+        <form>
             <section className="book-edit-inputs flex">
                 <label htmlFor="title">Book name:</label>
                 <input onChange={handleChange} value={title} type="text" name="title" id="title" />
@@ -66,7 +66,7 @@ export function BookEdit() {
                 <input onChange={handleChange} value={amount || 0} type="number" name="amount" id="amount" />
             </section>
         </form>
-        <button>{params.bookId ? 'Save' : 'Add'}</button>
+        <button onClick={onSaveBook}>{params.bookId ? 'Save' : 'Add'}</button>
 
     </section>
 
