@@ -462,8 +462,8 @@ export const bookService = {
     getDefaultFilterBY,
     getEmptyReview,
     addReview,
-    removeReview
-    // getNextBookId,
+    removeReview,
+    getNextBookId
     // getFilterBy,
     // setFilterBy,
 }
@@ -571,27 +571,19 @@ function getEmptyBook() {
 //     return gFilterBy
 // }
 
-// function getNextCarId(carId) {
-//     return storageService.query(CAR_KEY)
-//         .then(cars => {
-//             var idx = cars.findIndex(car => car.id === carId)
-//             if (idx === cars.length - 1) idx = -1
-//             return cars[idx + 1].id
-//         })
-// }
+function getNextBookId(bookId, diff) {
+  return storageService.query(BOOK_KEY)
+      .then(books => {
+          let idx = books.findIndex(book => book.id === bookId);
+          
+          // Calculate the new index with wrapping
+          idx = (idx + diff + books.length) % books.length;
 
-// function getCarCountBySpeedMap() {
-//     return storageService.query(CAR_KEY)
-//         .then(cars => {
-//             const carCountBySpeedMap = cars.reduce((map, car) => {
-//                 if (car.maxSpeed < 120) map.slow++
-//                 else if (car.maxSpeed < 200) map.normal++
-//                 else map.fast++
-//                 return map
-//             }, { slow: 0, normal: 0, fast: 0 })
-//             return carCountBySpeedMap
-//         })
-// }
+          return books[idx].id;
+      });
+}
+
+
 
 function _createBooks() {
     let books = utilService.loadFromStorage(BOOK_KEY)

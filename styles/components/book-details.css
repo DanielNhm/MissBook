@@ -25,6 +25,12 @@
     justify-content: flex-end;
     align-items: flex-start;
 }
+.pagination{
+    margin-top: 15px;
+}
+.pagination button{
+    text-transform:uppercase;
+}
 
 .img-details img:first-child {
     width: 100%;

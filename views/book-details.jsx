@@ -23,7 +23,14 @@ export function BookDetails() {
                 console.log('Had issued in book details', err)
                 navigate('/book')
             })
-    }, [])
+    }, [params.bookId])
+
+
+    function loadNextBookId(diff) {
+        bookService.getNextBookId(params.bookId, diff).then(bookId => {
+            navigate(`/book/${bookId}`)
+        })
+    }
 
 
     function getColorTxt() {
@@ -58,30 +65,41 @@ export function BookDetails() {
     if (!book) return <div>Loading...</div>
 
     return <section>
-        <section className="book-details">
-            <section className='details'>
+        <section className='flex align-center justify-center column-direction'> 
+            <section className="book-details">
+                <section className='details'>
 
-                <article>
-                    <span className='bold'>Name : </span> {book.title}
+                    <article>
+                        <span className='bold'>Name : </span> {book.title}
 
-                </article>
-                <article>
+                    </article>
+                    <article>
 
-                    <span className='bold'>Authors :</span> {book.authors}
-                </article>
-                <span className='bold'>Description :</span>
-                <LongTxt txt={book.description}></LongTxt>
-                <article className={getColorTxt()}> <span className='bold'> price:</span> {`${getPriceSymbol()} ${book.listPrice.amount}`}</article>
+                        <span className='bold'>Authors :</span> {book.authors}
+                    </article>
+                    <span className='bold'>Description :</span>
+                    <LongTxt txt={book.description}></LongTxt>
+                    <article className={getColorTxt()}> <span className='bold'> price:</span> {`${getPriceSymbol()} ${book.listPrice.amount}`}</article>
 
+                </section>
+                <div className='img-details'>
+
+                    <img src={book.thumbnail} />
+                    {(book.listPrice.isOnSale) && <img className='svg-sale' src="../svg/sale-svgrepo-com.svg"></img>}
+                </div>
             </section>
-            <div className='img-details'>
-
-            <img src={book.thumbnail} />
-            {(book.listPrice.isOnSale) && <img className='svg-sale' src="../svg/sale-svgrepo-com.svg"></img>}
-            </div>
         </section>
-            {book.reviews && <ReviewList book={book} onRemoveReview={onRemoveReview} />}
-        <section className='flex align-center column-direction'>
+        <section className='pagination flex align-center space-between'>
+            <button onClick={() => {
+                loadNextBookId(-1)
+            }}>prev</button>
+            <button onClick={() => {
+                loadNextBookId(1)
+            }}>next</button>
+
+        </section>
+        {book.reviews && <ReviewList book={book} onRemoveReview={onRemoveReview} />}
+        <section className='flex align-center column-direction justify-end'>
 
 
             <Link to={`/book/${book.id}/review`}>Add review</Link>

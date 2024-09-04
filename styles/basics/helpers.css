@@ -35,6 +35,10 @@
     flex-direction: column;
 }
 
+.flex.justify-end{
+    justify-content: flex-end;
+}
+
 /* LIST HELPERS */
 
 .clean-list{
@@ -48,4 +52,10 @@
 
 .bold {
     font-weight: bold;
+}
+
+/* more helpers */
+
+.top-auto{
+    margin-top: auto;
 }

@@ -1,0 +1,8 @@
+.about nav .active{
+    color:var(--clrPrimary-2) ;
+
+}
+
+.vision,.team{
+    padding-top: 20px;
+}
